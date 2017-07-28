@@ -1,0 +1,204 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Home\n\n\n\nTable of contents\n\n\n\n\n\nUser Guide:\n\n\nUser Login\n\n\nLogin to OpenShift Command Line Interface\n\n\nLogin to OpenShift Web Console\n\n\n\n\n\n\nApplication Development\n\n\nCreate New Project Using Web Console\n\n\nCreate New Project Using Command Line Interface\n\n\nCreate New Application From Catalog\n\n\nCreate New Application From Docker Image\n\n\nCreate New Database\n\n\nCreate New Application With Private Git Repository\n\n\n\n\n\n\nOperation\n\n\nUpload File into Running Pod\n\n\nDownload File from Running Pod\n\n\n\n\n\n\nConfiguration\n\n\nSetting Source Secrets\n\n\nConfigure Git WebHook\n\n\nConfigure Autoscaling\n\n\nSetting Environment Variables\n\n\nSetting Application Router (HTTP)\n\n\nSetting Application Router (HTTPS)\n\n\n\n\n\n\nReferences\n\n\nCreate SSH Keys in Linux\n\n\nAdd Public Key in GitLab Repository\n\n\nAdd WebHook in GitLab Project\n\n\nSet Maven project for OpenShift\n\n\nCreate Self Signed SSL in Linux\n\n\n\n\n\n\n\n\n\n\nUse Cases\n\n\nWordpress\n\n\nJava Web Application\n\n\n\n\n\n\nAbout",
+            "title": "Home"
+        },
+        {
+            "location": "/guide/login/",
+            "text": "Login to OpenShift Command Line Interface\n\n\nclick here to download OpenShift CLI\n\n\n1. Run login command \noc login [OPENSHIFT_URL]\n\n\n2. Entry the username and password\n\n\n$ oc login https://lb.osh.telkom.co.id:8443\nAuthentication required for https://lb.osh.telkom.co.id:8443 (openshift)\nUsername: user001\nPassword:\nLogin successful.\n\n\n\nLogin to OpenShift Web Console\n\n\n1. Open \nOpenShift Web Console\n by web browser\n\n\n2. Fill the username and password",
+            "title": "User Login"
+        },
+        {
+            "location": "/guide/login/#login-to-openshift-command-line-interface",
+            "text": "click here to download OpenShift CLI  1. Run login command  oc login [OPENSHIFT_URL]  2. Entry the username and password  $ oc login https://lb.osh.telkom.co.id:8443\nAuthentication required for https://lb.osh.telkom.co.id:8443 (openshift)\nUsername: user001\nPassword:\nLogin successful.",
+            "title": "Login to OpenShift Command Line Interface"
+        },
+        {
+            "location": "/guide/login/#login-to-openshift-web-console",
+            "text": "1. Open  OpenShift Web Console  by web browser  2. Fill the username and password",
+            "title": "Login to OpenShift Web Console"
+        },
+        {
+            "location": "/guide/newapp/",
+            "text": "Create New Project Using Web Console\n\n\n1. Open \nOpenShift Web Console\n\n\n2. Click \nNew Project\n \n\n\n\n\n3. Fill the form \n\n\n\n\nCreate New Project Using Command Line Interface\n\n\n1. Execute new-project command \noc new-project [PROJECT_NAME]\n\n\n$ oc new-project project0002\nNow using project \"project0002\" on server \"https://lb.osh.telkom.co.id:8443\".\n\nYou can add applications to this project with the 'new-app' command. For example, try:\n\n    oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-ex.git\n\nto build a new example application in Ruby.\n\n\n\nCreate New Application From Catalog\n\n\n1. Create New Application click \nAdd to Project\n \n\n\n\n\n2. Choose Application from the Catalog (tab \nBrowse Catalog\n).\n\n\n\n\n3. Fill the required form then click \nCreate\n \n\n\n\n\nCreate New Application From Docker Image\n\n\n1. Prepare the application from \nDockerHub Repositories\n\n\n\n\n2. Create New Application (\nAdd to Project > Deploy Image\n)\n\n\n\n\n3. Specify the \nImage Name\n from chosen application from DockerHub Repositories\n\n\n\n\n4. Fill the required form then click \nCreate\n.\n\n\nCreate New Database\n\n\nThis section using MySQL database\n\n\n1. Create New Application click \nAdd to Project\n \n\n\n\n\n2. Choose MySQL Persistent from the Catalog\n\n\n\n\n3. Fill the required form. Set unique \nDatabase Service Name\n do distinguish applications inside project. Leave \nMySQL Connection Username\n, \nMySQL Connection Password\n and \nMySQL root user Password\n empty to auto generate the values. Click \nCreate\n\n\n\n\n4. Save the generated \nUsername\n, \nPassword\n, \nDatabase Name\n and \nConnection URL\n. \n\n\n\n\nCreate New Application With Private Git Repository\n\n\nThis guide shows how to create new application which source in Git private repository. \n\n\n1. Setting Source Secrets\n\n\nsee \nSetting Source Secrets\n\n\n2. Add Public Key in Git Repository\n\n\nto show how to add public key in GitLab see \nAdd Public Key in GitLab Repository\n\n\n3. Create New Application click \nAdd to Project\n \n\n\n\n\n4. Choose Application from the Catalog (tab \nBrowse Catalog\n).\n\n\n\n\n5. Fill the required form \n\n\n\n\n\n\nSpecify the application name\n\n\nexample: php-1\n\n\n\n\n\n\n\nFill \nGit Repository URL\n with the Git private project using SSH URL\n\n\nexample: git@10.60.160.38:andre/phpinfo.git\n\n\n\n\n\n\n\nClick \nadvanced options\n\n\n\n\nSelect \nSource Secret\n with source secret created in Step 1\n\n\nClick \nCreate\n button",
+            "title": "Application Development"
+        },
+        {
+            "location": "/guide/newapp/#create-new-project-using-web-console",
+            "text": "1. Open  OpenShift Web Console  2. Click  New Project     3. Fill the form",
+            "title": "Create New Project Using Web Console"
+        },
+        {
+            "location": "/guide/newapp/#create-new-project-using-command-line-interface",
+            "text": "1. Execute new-project command  oc new-project [PROJECT_NAME]  $ oc new-project project0002\nNow using project \"project0002\" on server \"https://lb.osh.telkom.co.id:8443\".\n\nYou can add applications to this project with the 'new-app' command. For example, try:\n\n    oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-ex.git\n\nto build a new example application in Ruby.",
+            "title": "Create New Project Using Command Line Interface"
+        },
+        {
+            "location": "/guide/newapp/#create-new-application-from-catalog",
+            "text": "1. Create New Application click  Add to Project     2. Choose Application from the Catalog (tab  Browse Catalog ).   3. Fill the required form then click  Create",
+            "title": "Create New Application From Catalog"
+        },
+        {
+            "location": "/guide/newapp/#create-new-application-from-docker-image",
+            "text": "1. Prepare the application from  DockerHub Repositories   2. Create New Application ( Add to Project > Deploy Image )   3. Specify the  Image Name  from chosen application from DockerHub Repositories   4. Fill the required form then click  Create .",
+            "title": "Create New Application From Docker Image"
+        },
+        {
+            "location": "/guide/newapp/#create-new-database",
+            "text": "This section using MySQL database  1. Create New Application click  Add to Project     2. Choose MySQL Persistent from the Catalog   3. Fill the required form. Set unique  Database Service Name  do distinguish applications inside project. Leave  MySQL Connection Username ,  MySQL Connection Password  and  MySQL root user Password  empty to auto generate the values. Click  Create   4. Save the generated  Username ,  Password ,  Database Name  and  Connection URL .",
+            "title": "Create New Database"
+        },
+        {
+            "location": "/guide/newapp/#create-new-application-with-private-git-repository",
+            "text": "This guide shows how to create new application which source in Git private repository.   1. Setting Source Secrets  see  Setting Source Secrets  2. Add Public Key in Git Repository  to show how to add public key in GitLab see  Add Public Key in GitLab Repository  3. Create New Application click  Add to Project     4. Choose Application from the Catalog (tab  Browse Catalog ).   5. Fill the required form     Specify the application name  example: php-1    Fill  Git Repository URL  with the Git private project using SSH URL  example: git@10.60.160.38:andre/phpinfo.git    Click  advanced options   Select  Source Secret  with source secret created in Step 1  Click  Create  button",
+            "title": "Create New Application With Private Git Repository"
+        },
+        {
+            "location": "/guide/appmgmt/",
+            "text": "Upload File into Running Pod\n\n\n1.    Select Project \noc project [PROJECT_NAME]\n\n\n$ oc project sop\nNow using project \"sop\" on server \"https://lb.osh.telkom.co.id:8443\".\n\n\n\n2. Get the pod name of deployed application \noc get pods\n\n\n$ oc get pods\nNAME            READY     STATUS    RESTARTS   AGE\nmysql-1-shblb   1/1       Running   0          1m\n\n\n\n3.    Upload file to selected pod \noc rsync [SOURCE_DIR] [POD_NAME]:[DESTINATION_DIR]\n\n\n$ oc rsync /home/source mysql-1-shblb:/tmp/destination\nForwarding from 127.0.0.1:58021 -> 45705\nForwarding from [::1]:58021 -> 45705\nHandling connection for 58021\nsending incremental file list\ncreated directory tmp/destination\nsource/\nsource/database.sql\n\nsent 450,501 bytes  received 76 bytes  180,230.80 bytes/sec\ntotal size is 450,274  speedup is 1.00\n\n\n\nDownload File from Running Pod\n\n\n1. Select Project \noc project [PROJECT_NAME]\n\n\n$ oc project sop\nNow using project \"sop\" on server \"https://lb.osh.telkom.co.id:8443\".\n\n\n\n2. Get the pod name of deployed application \noc get pods\n\n\n$ oc get pods\nNAME            READY     STATUS    RESTARTS   AGE\nmysql-1-shblb   1/1       Running   0          1m\n\n\n\n3. Upload file to selected pod \noc rsync [POD_NAME]:[SOURCE_DIR] [DESTINATION_DIR]\n\n\n$ oc rsync mysql-1-shblb:/tmp/destination /home\nForwarding from 127.0.0.1:58479 -> 50222\nForwarding from [::1]:58479 -> 50222\nHandling connection for 58479\nreceiving incremental file list\ndestination/\ndestination/source/\ndestination/source/database.sql\nsent 53 bytes  received 450,498 bytes  180,220.40 bytes/sec\ntotal size is 450,274  speedup is 1.00",
+            "title": "Operation"
+        },
+        {
+            "location": "/guide/appmgmt/#upload-file-into-running-pod",
+            "text": "1.    Select Project  oc project [PROJECT_NAME]  $ oc project sop\nNow using project \"sop\" on server \"https://lb.osh.telkom.co.id:8443\".  2. Get the pod name of deployed application  oc get pods  $ oc get pods\nNAME            READY     STATUS    RESTARTS   AGE\nmysql-1-shblb   1/1       Running   0          1m  3.    Upload file to selected pod  oc rsync [SOURCE_DIR] [POD_NAME]:[DESTINATION_DIR]  $ oc rsync /home/source mysql-1-shblb:/tmp/destination\nForwarding from 127.0.0.1:58021 -> 45705\nForwarding from [::1]:58021 -> 45705\nHandling connection for 58021\nsending incremental file list\ncreated directory tmp/destination\nsource/\nsource/database.sql\n\nsent 450,501 bytes  received 76 bytes  180,230.80 bytes/sec\ntotal size is 450,274  speedup is 1.00",
+            "title": "Upload File into Running Pod"
+        },
+        {
+            "location": "/guide/appmgmt/#download-file-from-running-pod",
+            "text": "1. Select Project  oc project [PROJECT_NAME]  $ oc project sop\nNow using project \"sop\" on server \"https://lb.osh.telkom.co.id:8443\".  2. Get the pod name of deployed application  oc get pods  $ oc get pods\nNAME            READY     STATUS    RESTARTS   AGE\nmysql-1-shblb   1/1       Running   0          1m  3. Upload file to selected pod  oc rsync [POD_NAME]:[SOURCE_DIR] [DESTINATION_DIR]  $ oc rsync mysql-1-shblb:/tmp/destination /home\nForwarding from 127.0.0.1:58479 -> 50222\nForwarding from [::1]:58479 -> 50222\nHandling connection for 58479\nreceiving incremental file list\ndestination/\ndestination/source/\ndestination/source/database.sql\nsent 53 bytes  received 450,498 bytes  180,220.40 bytes/sec\ntotal size is 450,274  speedup is 1.00",
+            "title": "Download File from Running Pod"
+        },
+        {
+            "location": "/guide/config/",
+            "text": "Setting Source Secrets\n\n\n1. Create SSH keys\n\n\nsee \nCreate SSH Keys in Linux\n\n\n2. Click \nResources > Secret\n in OpenShift web console\n\n\n\n\n3. Click \nCreate Secret\n button\n\n\n\n\n4. Fill the required form\n\n\n\n\nSelect \nSource Secret\n in Secret Type\n\n\nSpecify Secret Name\n\n\nSelect \nSSH Key\n in Authentication Type\n\n\nUpload SSH Private Key file\n\n\nClick \nCreate\n\n\n\n\n\n\nConfigure Git WebHook\n\n\nOpenShift allows the deployed application to automatically re-deploy when the source repository changed. To enable this feature, user have to configure Git WebHook. This guide using GitLab as Git repository. Assumed there is a running application in OpenShift to configure the WebHook.\n\n\n1. Click \nBuilds > Builds\n in OpenShift web console \n\n\n\n\n2. Select the application to add WebHook \n\n\n\n\n3. In \nConfiguration\n tab, copy the \nGeneric Webhook URL\n \n\n\n\n\n4. Open Web Hooks configuration in the Git project. Create WebHook with the \nGeneric Webhook URL\n \n\n\n\n\n5. Everytime user push the Git project, OpenShift will re-deploy the application accordingly\n\n\n\n\nConfigure Autoscaling\n\n\n1. Click \nApplications > Deployments\n from the web console\n\n\n\n\n2. Select the application deployment to configure the autoscaling\n\n\n\n\n3. Go to \nConfiguration\n tab then click \nAdd Autoscaler\n\n\n\n\n4. Specify the minimum pods, maximum pods and percentage of CPU request target. Then click \nSave\n\n\n\n\n5. Click \nEdit Resource Requests and Limit\n \n\n\n\n\n6. Specify minimum and maximum CPU limit request \n\n\n\n\n7. The pod is going to autoscaling accourdingly \n\n\n\n\nSetting Environment Variables\n\n\n1. Click \nBuilds > Builds\n in OpenShift web console \n\n\n\n\n2. Select the application to set the environmet variables \n\n\n\n\n3. Create the environment variables in the Environment tab \n\n\n\n\nSetting Application Router (HTTP)\n\n\n1. Open OpenShift web console and select project\n\n\n2. Click \nApplications > Routes\n \n\n\n\n\n3. Click \nCreate Route\n button \n\n\n\n\n4. Fill the form\n\n\n\n\n\n\nEnter \nHostname\n with the format \n[APPLICATION_NAME].apps.osh.telkom.co.id\n\n\nexample : myapplication.apps.osh.telkom.co.id\n\n\n\n\n\n\n\nSelect the Service name\n\n\n\n\nClick Create\n\n\n\n\n\nSetting Application Router (HTTPS)\n\n\nThis section require SSL certificate. To generate self signed certificate in linux see \nCreate Self Signed SSL in Linux\n\n\n1. Open OpenShift web console and select project\n\n\n2. Click \nApplications > Routes\n \n\n\n\n\n3. Click \nCreate Route\n button \n\n\n\n\n4. Fill the form\n\n\n\n\n\n\nEnter \nHostname\n with the format \n[APPLICATION_NAME].apps.osh.telkom.co.id\n\n\nexample : myapplication.apps.osh.telkom.co.id\n\n\n\n\n\n\n\nSelect the Service name\n\n\n\n\nSelect the Certificate files (Certificate and Private Key).\n\n\nClick Create",
+            "title": "Configuration"
+        },
+        {
+            "location": "/guide/config/#setting-source-secrets",
+            "text": "1. Create SSH keys  see  Create SSH Keys in Linux  2. Click  Resources > Secret  in OpenShift web console   3. Click  Create Secret  button   4. Fill the required form   Select  Source Secret  in Secret Type  Specify Secret Name  Select  SSH Key  in Authentication Type  Upload SSH Private Key file  Click  Create",
+            "title": "Setting Source Secrets"
+        },
+        {
+            "location": "/guide/config/#configure-git-webhook",
+            "text": "OpenShift allows the deployed application to automatically re-deploy when the source repository changed. To enable this feature, user have to configure Git WebHook. This guide using GitLab as Git repository. Assumed there is a running application in OpenShift to configure the WebHook.  1. Click  Builds > Builds  in OpenShift web console    2. Select the application to add WebHook    3. In  Configuration  tab, copy the  Generic Webhook URL     4. Open Web Hooks configuration in the Git project. Create WebHook with the  Generic Webhook URL     5. Everytime user push the Git project, OpenShift will re-deploy the application accordingly",
+            "title": "Configure Git WebHook"
+        },
+        {
+            "location": "/guide/config/#configure-autoscaling",
+            "text": "1. Click  Applications > Deployments  from the web console   2. Select the application deployment to configure the autoscaling   3. Go to  Configuration  tab then click  Add Autoscaler   4. Specify the minimum pods, maximum pods and percentage of CPU request target. Then click  Save   5. Click  Edit Resource Requests and Limit     6. Specify minimum and maximum CPU limit request    7. The pod is going to autoscaling accourdingly",
+            "title": "Configure Autoscaling"
+        },
+        {
+            "location": "/guide/config/#setting-environment-variables",
+            "text": "1. Click  Builds > Builds  in OpenShift web console    2. Select the application to set the environmet variables    3. Create the environment variables in the Environment tab",
+            "title": "Setting Environment Variables"
+        },
+        {
+            "location": "/guide/config/#setting-application-router-http",
+            "text": "1. Open OpenShift web console and select project  2. Click  Applications > Routes     3. Click  Create Route  button    4. Fill the form    Enter  Hostname  with the format  [APPLICATION_NAME].apps.osh.telkom.co.id  example : myapplication.apps.osh.telkom.co.id    Select the Service name   Click Create",
+            "title": "Setting Application Router (HTTP)"
+        },
+        {
+            "location": "/guide/config/#setting-application-router-https",
+            "text": "This section require SSL certificate. To generate self signed certificate in linux see  Create Self Signed SSL in Linux  1. Open OpenShift web console and select project  2. Click  Applications > Routes     3. Click  Create Route  button    4. Fill the form    Enter  Hostname  with the format  [APPLICATION_NAME].apps.osh.telkom.co.id  example : myapplication.apps.osh.telkom.co.id    Select the Service name   Select the Certificate files (Certificate and Private Key).  Click Create",
+            "title": "Setting Application Router (HTTPS)"
+        },
+        {
+            "location": "/guide/tutorial/",
+            "text": "Create SSH Keys in Linux\n\n\nThis tutorial shows how to generate SSH Keys in Linux Operating Systems. Generated a private key file (\n$HOME/.ssh/id_rsa.pub\n) and public key file (\n$HOME/.ssh/id_rsa\n).\n\n\n1. Run SSH keygen command \nssh-keygen -t rsa -C [SSH_KEY_TITLE] -b 4096\n\n\n$ ssh-keygen -t rsa -C \"GitLab\" -b 4096\nGenerating public/private rsa key pair.\nEnter file in which to save the key (/root/.ssh/id_rsa):\nEnter passphrase (empty for no passphrase):\nEnter same passphrase again:\nYour identification has been saved in /root/.ssh/id_rsa.\nYour public key has been saved in /root/.ssh/id_rsa.pub.\nThe key fingerprint is:\nab:6c:ed:32:fb:fe:1f:93:75:9a:ba:8c:cd:c6:7b:57 GitLab\nThe key's randomart image is:\n+--[ RSA 4096]----+\n|                 |\n|                 |\n|                 |\n|                 |\n|        S     . .|\n|         .   o +E|\n|       ..  .+ o .|\n|     .+..  =o+. .|\n|     .+B+.ooO+ . |\n+-----------------+\n\n\n\n2. Verify generated keys\n\n\n$ cat $HOME/.ssh/id_rsa.pub\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDtfgukLBCTUcYZBYw7nBtM1dH77zKnCNaTEf4kT5nMClO8+X5taP3hXMPvfYHONBjaDmaons86uviavJTS0dFh+Vr8zl7ASG64oI9Q5UMXGfnDMszQDdNeX0SXamHlLJSGFryQ3hCYBjvLKzdK90OzpQF72D5EhziFIfJ2co50fA5s2iDVgEbaxwGKOUj0sZECTgs7z8m0WtenzRUaygKoUahJ/1woRkFlo15MqH+6a+JyBph1VMBa3R6cmmzCAXIQu5T/tikwk4EmaeRharlCd5NJaMN5YfMp8kKK3adtbIqMzjLf3eVL32HA+QEXfQ36ALNFgeVTniJ/ouAEo6KQFkSFm3J3EyaizvarKnzPrvUQPk2Tg4dwxfGLvRZHUlxIICUU/3xTLBmyO30/nqrFbYB3qd3c+o5w6zUbd1gDQsLXSkr+GSCkstNUGE+XEjRQSMYTgfmLkQAA3jw4MMmboRLnPU1fYfyRPF8Zk5Y0q+R2dys83KQInxfutAVBMhn9wI5fLr/nyCON7Zt5Qmf4lK5rs5db1y8l1aXqCvrSm6nq0BoqViTVMGEoVKjwN9DDI+E74VpuT7IhtZuXu7gREjdRmaVg6fClNL/2yR+lf2sVcMYVxAGGkuU27tvFQCC7wRFfZqs0i7gDT0Y4L/CE3vPQYI0yWqFSU/bBJTL6XQ== GitLab\n\n\n\nAdd Public Key in GitLab Repository\n\n\n1. Login to GitLab\n\n\n2. Open SSH Keys page GitLab in \n[GITLAB_HOST]/profile/keys\n. Click \nAdd SSH Key\n \n\n\n\n\n3. Fill title input. Fill Key textbox with generated SSH public key (\ncat $HOME/.ssh/id_rsa.pub\n).\n\n\n\n\n4. Click \nAdd key\n \n\n\n\n\nAdd WebHook in GitLab Project\n\n\n1. Open Web Hook page in selected project in \nhttp://[GITLAB_HOST]/[GITLAB_USERNAME]/[GITLAB_PROJECT_NAME]/hooks\n \n\n\n2. Fill Web Hook URL. Check \nPush events\n selector\n\n\n3. Click Add Web Hook\n\n\n\n\nSet Maven project for OpenShift\n\n\nJava web application have to be a maven project to be able to deploy in OpenShift. Below is OpenShift plugin included in pom.xml.\n\n\n    ...\n    <profile>\n        <id>openshift</id>\n        <build>\n            <plugins>\n                <plugin>\n                    <artifactId>maven-war-plugin</artifactId>\n                    <configuration>\n                        <failOnMissingWebXml>false</failOnMissingWebXml>\n                        <outputDirectory>deployments</outputDirectory>\n                        <warName>ROOT</warName>\n                    </configuration>\n                </plugin>\n            </plugins>\n        </build>\n    </profile>\n    ...\n</project>\n\n\n\nCreate Self Signed SSL in Linux\n\n\n1. Generate private key\n\n\nopenssl genrsa -out ca.key 2048\n\n\n$ openssl genrsa -out ca.key 2048\nGenerating RSA private key, 2048 bit long modulus\n............+++\n........+++\ne is 65537 (0x10001)\n\n\n\n2. Create CSR file. \n\n\nopenssl req -new -key ca.key -out ca.csr\n\n\n$ openssl req -new -key ca.key -out ca.csr\nYou are about to be asked to enter information that will be incorporated\ninto your certificate request.\nWhat you are about to enter is what is called a Distinguished Name or a DN.\nThere are quite a few fields but you can leave some blank\nFor some fields there will be a default value,\nIf you enter '.', the field will be left blank.\n-----\nCountry Name (2 letter code) [XX]:ID\nState or Province Name (full name) []:\nLocality Name (eg, city) [Default City]:\nOrganization Name (eg, company) [Default Company Ltd]:\nOrganizational Unit Name (eg, section) []:\nCommon Name (eg, your name or your server's hostname) []:\nEmail Address []:\n\nPlease enter the following 'extra' attributes\nto be sent with your certificate request\nA challenge password []:\nAn optional company name []:\n$ openssl x509 -req -days 365 -in ca.csr -signkey ca.key -out ca.crt\nSignature ok\nsubject=/C=ID/L=Default City/O=Default Company Ltd\nGetting Private key\n\n\n\nThis guide will generate \nca.crt\n, \nca.csr\n and \nca.key\n files.\n\n\n$ ls\nca.crt  ca.csr  ca.key",
+            "title": "References"
+        },
+        {
+            "location": "/guide/tutorial/#create-ssh-keys-in-linux",
+            "text": "This tutorial shows how to generate SSH Keys in Linux Operating Systems. Generated a private key file ( $HOME/.ssh/id_rsa.pub ) and public key file ( $HOME/.ssh/id_rsa ).  1. Run SSH keygen command  ssh-keygen -t rsa -C [SSH_KEY_TITLE] -b 4096  $ ssh-keygen -t rsa -C \"GitLab\" -b 4096\nGenerating public/private rsa key pair.\nEnter file in which to save the key (/root/.ssh/id_rsa):\nEnter passphrase (empty for no passphrase):\nEnter same passphrase again:\nYour identification has been saved in /root/.ssh/id_rsa.\nYour public key has been saved in /root/.ssh/id_rsa.pub.\nThe key fingerprint is:\nab:6c:ed:32:fb:fe:1f:93:75:9a:ba:8c:cd:c6:7b:57 GitLab\nThe key's randomart image is:\n+--[ RSA 4096]----+\n|                 |\n|                 |\n|                 |\n|                 |\n|        S     . .|\n|         .   o +E|\n|       ..  .+ o .|\n|     .+..  =o+. .|\n|     .+B+.ooO+ . |\n+-----------------+  2. Verify generated keys  $ cat $HOME/.ssh/id_rsa.pub\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDtfgukLBCTUcYZBYw7nBtM1dH77zKnCNaTEf4kT5nMClO8+X5taP3hXMPvfYHONBjaDmaons86uviavJTS0dFh+Vr8zl7ASG64oI9Q5UMXGfnDMszQDdNeX0SXamHlLJSGFryQ3hCYBjvLKzdK90OzpQF72D5EhziFIfJ2co50fA5s2iDVgEbaxwGKOUj0sZECTgs7z8m0WtenzRUaygKoUahJ/1woRkFlo15MqH+6a+JyBph1VMBa3R6cmmzCAXIQu5T/tikwk4EmaeRharlCd5NJaMN5YfMp8kKK3adtbIqMzjLf3eVL32HA+QEXfQ36ALNFgeVTniJ/ouAEo6KQFkSFm3J3EyaizvarKnzPrvUQPk2Tg4dwxfGLvRZHUlxIICUU/3xTLBmyO30/nqrFbYB3qd3c+o5w6zUbd1gDQsLXSkr+GSCkstNUGE+XEjRQSMYTgfmLkQAA3jw4MMmboRLnPU1fYfyRPF8Zk5Y0q+R2dys83KQInxfutAVBMhn9wI5fLr/nyCON7Zt5Qmf4lK5rs5db1y8l1aXqCvrSm6nq0BoqViTVMGEoVKjwN9DDI+E74VpuT7IhtZuXu7gREjdRmaVg6fClNL/2yR+lf2sVcMYVxAGGkuU27tvFQCC7wRFfZqs0i7gDT0Y4L/CE3vPQYI0yWqFSU/bBJTL6XQ== GitLab",
+            "title": "Create SSH Keys in Linux"
+        },
+        {
+            "location": "/guide/tutorial/#add-public-key-in-gitlab-repository",
+            "text": "1. Login to GitLab  2. Open SSH Keys page GitLab in  [GITLAB_HOST]/profile/keys . Click  Add SSH Key     3. Fill title input. Fill Key textbox with generated SSH public key ( cat $HOME/.ssh/id_rsa.pub ).   4. Click  Add key",
+            "title": "Add Public Key in GitLab Repository"
+        },
+        {
+            "location": "/guide/tutorial/#add-webhook-in-gitlab-project",
+            "text": "1. Open Web Hook page in selected project in  http://[GITLAB_HOST]/[GITLAB_USERNAME]/[GITLAB_PROJECT_NAME]/hooks    2. Fill Web Hook URL. Check  Push events  selector  3. Click Add Web Hook",
+            "title": "Add WebHook in GitLab Project"
+        },
+        {
+            "location": "/guide/tutorial/#set-maven-project-for-openshift",
+            "text": "Java web application have to be a maven project to be able to deploy in OpenShift. Below is OpenShift plugin included in pom.xml.      ...\n    <profile>\n        <id>openshift</id>\n        <build>\n            <plugins>\n                <plugin>\n                    <artifactId>maven-war-plugin</artifactId>\n                    <configuration>\n                        <failOnMissingWebXml>false</failOnMissingWebXml>\n                        <outputDirectory>deployments</outputDirectory>\n                        <warName>ROOT</warName>\n                    </configuration>\n                </plugin>\n            </plugins>\n        </build>\n    </profile>\n    ...\n</project>",
+            "title": "Set Maven project for OpenShift"
+        },
+        {
+            "location": "/guide/tutorial/#create-self-signed-ssl-in-linux",
+            "text": "1. Generate private key  openssl genrsa -out ca.key 2048  $ openssl genrsa -out ca.key 2048\nGenerating RSA private key, 2048 bit long modulus\n............+++\n........+++\ne is 65537 (0x10001)  2. Create CSR file.   openssl req -new -key ca.key -out ca.csr  $ openssl req -new -key ca.key -out ca.csr\nYou are about to be asked to enter information that will be incorporated\ninto your certificate request.\nWhat you are about to enter is what is called a Distinguished Name or a DN.\nThere are quite a few fields but you can leave some blank\nFor some fields there will be a default value,\nIf you enter '.', the field will be left blank.\n-----\nCountry Name (2 letter code) [XX]:ID\nState or Province Name (full name) []:\nLocality Name (eg, city) [Default City]:\nOrganization Name (eg, company) [Default Company Ltd]:\nOrganizational Unit Name (eg, section) []:\nCommon Name (eg, your name or your server's hostname) []:\nEmail Address []:\n\nPlease enter the following 'extra' attributes\nto be sent with your certificate request\nA challenge password []:\nAn optional company name []:\n$ openssl x509 -req -days 365 -in ca.csr -signkey ca.key -out ca.crt\nSignature ok\nsubject=/C=ID/L=Default City/O=Default Company Ltd\nGetting Private key  This guide will generate  ca.crt ,  ca.csr  and  ca.key  files.  $ ls\nca.crt  ca.csr  ca.key",
+            "title": "Create Self Signed SSL in Linux"
+        },
+        {
+            "location": "/usecase/wordpress/",
+            "text": "PHP Application - WordPress\n\n\n\nIntroduction\n\n\n\n    This use case consists of PHP application and MySQL database. It shows how to connect application and database in OpenShift. It also show how to build PHP application in OpenShift using private Git project.\n\n\n\nProcess\n\n\n\n\n\nPrerequisite\n\n\n\n    Prepare WordPress source code. Update the database configuration in \nwp-config.php\n file using environment variable. User can define variables for \nDB_NAME\n, \nDB_USER\n and \nDB_PASSWORD\n environment variables with arbitrary string. Set \nDB_HOST\n variable depend on the database service name using format \n[DATABASE_SERVICE_NAME]_SERVICE_HOST\n. For instance if user create database with service name \nMYSQL\n, DB_HOST have to set environment variable as \nMYSQL_SERVICE_HOST\n.\n\n\n\nexample\n\n\ndefine('DB_NAME', getenv('DB_NAME'));\n\n/** MySQL database username */\ndefine('DB_USER', getenv('DB_USER'));\n\n/** MySQL database password */\ndefine('DB_PASSWORD', getenv('DB_PASSWORD'));\n\n/** MySQL hostname */\ndefine('DB_HOST', getenv('MYSQL_SERVICE_HOST'));\n\n\n\n\n    The WordPress source code have to publish in Git repository which reachable from OpenShift and vice versa.\n\n\n\n\nProcess Detail\n\n\n\n    \n\n        \n\n            \nProcess\n\n            \nDescription\n\n        \n\n    \n\n    \n\n        \n\n            \nConfigure Git SSH and Source Secret\n\n            \n\n                This process require \ngenerate SSH keys\n. Then\n                \nset the SSH in Git Repository\n using the public key. Finally \ncreate Source Secrets\n using private key.\n            \n\n        \n\n        \n\n            \nCreate PHP Application\n\n            \n\n                If the WordPress Source Code using private Git Repository, \nspecify Source Secret\n. Otherwise just \ncreate the application.\n\n            \n\n        \n\n        \n\n            \nCreate Database\n\n            \n\n                Take a look to \nthis guide\n to create database in OpenShift. \n            \n\n        \n\n        \n\n            \nConfigure Database Connection\n\n            \n\n                \nSet the required environment variables\n in the PHP application. This case needs DB_NAME, DB_USER and DB_PASSWORD environment to set using name, username and password respectively of the database.\n            \n\n        \n\n    \n\n\n\n\n\nReferences\n\n\n\n\nCreate SSH Keys in Linux\n\n\nAdd Public Key in GitLab Repository\n\n\nSetting Source Secrets\n\n\nCreate New Application With Private Git Repository\n\n\nCreate New Application From Catalog\n\n\nCreate New Database\n\n\nSetting Environment Variables",
+            "title": "PHP Application"
+        },
+        {
+            "location": "/usecase/wordpress/#introduction",
+            "text": "This use case consists of PHP application and MySQL database. It shows how to connect application and database in OpenShift. It also show how to build PHP application in OpenShift using private Git project.",
+            "title": "Introduction"
+        },
+        {
+            "location": "/usecase/wordpress/#process",
+            "text": "",
+            "title": "Process"
+        },
+        {
+            "location": "/usecase/wordpress/#prerequisite",
+            "text": "Prepare WordPress source code. Update the database configuration in  wp-config.php  file using environment variable. User can define variables for  DB_NAME ,  DB_USER  and  DB_PASSWORD  environment variables with arbitrary string. Set  DB_HOST  variable depend on the database service name using format  [DATABASE_SERVICE_NAME]_SERVICE_HOST . For instance if user create database with service name  MYSQL , DB_HOST have to set environment variable as  MYSQL_SERVICE_HOST .  example  define('DB_NAME', getenv('DB_NAME'));\n\n/** MySQL database username */\ndefine('DB_USER', getenv('DB_USER'));\n\n/** MySQL database password */\ndefine('DB_PASSWORD', getenv('DB_PASSWORD'));\n\n/** MySQL hostname */\ndefine('DB_HOST', getenv('MYSQL_SERVICE_HOST'));  \n    The WordPress source code have to publish in Git repository which reachable from OpenShift and vice versa.",
+            "title": "Prerequisite"
+        },
+        {
+            "location": "/usecase/wordpress/#process-detail",
+            "text": "Process \n             Description \n         \n     \n     \n         \n             Configure Git SSH and Source Secret \n             \n                This process require  generate SSH keys . Then\n                 set the SSH in Git Repository  using the public key. Finally  create Source Secrets  using private key.\n             \n         \n         \n             Create PHP Application \n             \n                If the WordPress Source Code using private Git Repository,  specify Source Secret . Otherwise just  create the application. \n             \n         \n         \n             Create Database \n             \n                Take a look to  this guide  to create database in OpenShift. \n             \n         \n         \n             Configure Database Connection \n             \n                 Set the required environment variables  in the PHP application. This case needs DB_NAME, DB_USER and DB_PASSWORD environment to set using name, username and password respectively of the database.",
+            "title": "Process Detail"
+        },
+        {
+            "location": "/usecase/wordpress/#references",
+            "text": "Create SSH Keys in Linux  Add Public Key in GitLab Repository  Setting Source Secrets  Create New Application With Private Git Repository  Create New Application From Catalog  Create New Database  Setting Environment Variables",
+            "title": "References"
+        },
+        {
+            "location": "/usecase/java/",
+            "text": "Java Web Application\n\n\n\nIntroduction\n\n\n\n    This use case shows how to deploy Java web application in OpenShift. This section covers how to setting WebHook, autoscaler and also setting SSL router. \n\n\n\n\n    Most of the cases, OpenShift uses Git as repository to obtain the source in application. OpenShift capable to automatically update the deployed applications immediately after the Git repository updated. User have to set the WebHook to enable the feature.\n\n\n\n\n    OpenShift provides autoscaling feature to let the applications obtain resource depend on it's load. OpenShift adjust the memory and CPU based on the application's load. \n\n\n\n\n    When user deploy web application in OpenShift it is going to obtain a URL to expose the interface. The URL is HTTP by default. User can create SSL router when they wish.\n\n\n\nProcess\n\n\n\n\n\nPrerequisite\n\n\n\n    Java web application source code in OpenShift have to \nMavenized\n. The project have to specify \nopenshift\n profile in the \npom.xml\n as follows\n\n\n\n    ...\n    <profiles>\n    ....\n        <profile>\n            <id>openshift</id>\n            <build>\n                <plugins>\n                    <plugin>\n                        <artifactId>maven-war-plugin</artifactId>\n                        <configuration>\n                            <failOnMissingWebXml>false</failOnMissingWebXml>\n                            <outputDirectory>deployments</outputDirectory>\n                            <warName>ROOT</warName>\n                        </configuration>\n                    </plugin>\n                </plugins>\n            </build>\n        </profile>\n    </profiles>\n</project>\n\n\n\nProcess Detail\n\n\n\n    \n\n        \n\n            \nProcess\n\n            \nDescription\n\n        \n\n    \n\n    \n\n        \n\n            \nCreate WildFly Application\n\n            \n\n                WildFly is an application server to implements Java application. WildFly available as default image in OpenShift catalog. See \nthis guide to create application.\n\n            \n\n        \n\n        \n\n            \nSetting WebHook\n\n            \n\n                Take a look \nthis guide\n to set the WebHook.\n            \n\n        \n\n        \n\n            \nSetting SSL Router\n\n            \n\n                SSL Router require SSL certificate. User can \ngenerate self-signed SSL\n. \nThis guide\n shows how to set SSL application router given SSL certificate.\n            \n\n        \n\n        \n\n            \nConfigure Autoscaling\n\n            \n\n                See \nthis guide\n to configure autoscaling in the application.\n            \n\n        \n\n    \n\n\n\n\n\nReferences\n\n\n\n\nCreate New Application From Catalog\n\n\nConfigure Git Webhook\n\n\nCreate Self Signed SSL in Linux\n\n\nSetting Application Router HTTPS\n\n\nConfigure Autoscaling",
+            "title": "Java Web Application"
+        },
+        {
+            "location": "/usecase/java/#introduction",
+            "text": "This use case shows how to deploy Java web application in OpenShift. This section covers how to setting WebHook, autoscaler and also setting SSL router.   \n    Most of the cases, OpenShift uses Git as repository to obtain the source in application. OpenShift capable to automatically update the deployed applications immediately after the Git repository updated. User have to set the WebHook to enable the feature.  \n    OpenShift provides autoscaling feature to let the applications obtain resource depend on it's load. OpenShift adjust the memory and CPU based on the application's load.   \n    When user deploy web application in OpenShift it is going to obtain a URL to expose the interface. The URL is HTTP by default. User can create SSL router when they wish.",
+            "title": "Introduction"
+        },
+        {
+            "location": "/usecase/java/#process",
+            "text": "",
+            "title": "Process"
+        },
+        {
+            "location": "/usecase/java/#prerequisite",
+            "text": "Java web application source code in OpenShift have to  Mavenized . The project have to specify  openshift  profile in the  pom.xml  as follows      ...\n    <profiles>\n    ....\n        <profile>\n            <id>openshift</id>\n            <build>\n                <plugins>\n                    <plugin>\n                        <artifactId>maven-war-plugin</artifactId>\n                        <configuration>\n                            <failOnMissingWebXml>false</failOnMissingWebXml>\n                            <outputDirectory>deployments</outputDirectory>\n                            <warName>ROOT</warName>\n                        </configuration>\n                    </plugin>\n                </plugins>\n            </build>\n        </profile>\n    </profiles>\n</project>",
+            "title": "Prerequisite"
+        },
+        {
+            "location": "/usecase/java/#process-detail",
+            "text": "Process \n             Description \n         \n     \n     \n         \n             Create WildFly Application \n             \n                WildFly is an application server to implements Java application. WildFly available as default image in OpenShift catalog. See  this guide to create application. \n             \n         \n         \n             Setting WebHook \n             \n                Take a look  this guide  to set the WebHook.\n             \n         \n         \n             Setting SSL Router \n             \n                SSL Router require SSL certificate. User can  generate self-signed SSL .  This guide  shows how to set SSL application router given SSL certificate.\n             \n         \n         \n             Configure Autoscaling \n             \n                See  this guide  to configure autoscaling in the application.",
+            "title": "Process Detail"
+        },
+        {
+            "location": "/usecase/java/#references",
+            "text": "Create New Application From Catalog  Configure Git Webhook  Create Self Signed SSL in Linux  Setting Application Router HTTPS  Configure Autoscaling",
+            "title": "References"
+        },
+        {
+            "location": "/about/",
+            "text": "About\n\n\n\nTelkom OpenShift Origin Documentation\n\nPrepared for:\nPT. Telekomunikasi Indonesia, Tbk\n\nPrepared by:\nPT. Profisien Cipta Solusi\nJuni 2017\n\nVersion: 1.0\n28 August 2017\n\nContact: andre.pratama@profisien.co.id",
+            "title": "About"
+        }
+    ]
+}

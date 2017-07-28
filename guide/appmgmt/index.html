@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Operation - OpenShift Developer Documentation</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Upload File into Running Pod", url: "#upload-file-into-running-pod", children: [
+          ]},
+          {title: "Download File from Running Pod", url: "#download-file-from-running-pod", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+
+    <h2 id="upload-file-into-running-pod">Upload File into Running Pod</h2>
+<p><strong>1.    Select Project <code>oc project [PROJECT_NAME]</code></strong></p>
+<pre><code>$ oc project sop
+Now using project "sop" on server "https://lb.osh.telkom.co.id:8443".
+</code></pre>
+<p><strong>2. Get the pod name of deployed application <code>oc get pods</code></strong></p>
+<pre><code>$ oc get pods
+NAME            READY     STATUS    RESTARTS   AGE
+mysql-1-shblb   1/1       Running   0          1m
+</code></pre>
+<p><strong>3.    Upload file to selected pod <code>oc rsync [SOURCE_DIR] [POD_NAME]:[DESTINATION_DIR]</code></strong></p>
+<pre><code>$ oc rsync /home/source mysql-1-shblb:/tmp/destination
+Forwarding from 127.0.0.1:58021 -&gt; 45705
+Forwarding from [::1]:58021 -&gt; 45705
+Handling connection for 58021
+sending incremental file list
+created directory tmp/destination
+source/
+source/database.sql
+
+sent 450,501 bytes  received 76 bytes  180,230.80 bytes/sec
+total size is 450,274  speedup is 1.00
+</code></pre>
+<h2 id="download-file-from-running-pod">Download File from Running Pod</h2>
+<p><strong>1. Select Project <code>oc project [PROJECT_NAME]</code></strong></p>
+<pre><code>$ oc project sop
+Now using project "sop" on server "https://lb.osh.telkom.co.id:8443".
+</code></pre>
+<p><strong>2. Get the pod name of deployed application <code>oc get pods</code></strong></p>
+<pre><code>$ oc get pods
+NAME            READY     STATUS    RESTARTS   AGE
+mysql-1-shblb   1/1       Running   0          1m
+</code></pre>
+<p><strong>3. Upload file to selected pod <code>oc rsync [POD_NAME]:[SOURCE_DIR] [DESTINATION_DIR]</code></strong></p>
+<pre><code>$ oc rsync mysql-1-shblb:/tmp/destination /home
+Forwarding from 127.0.0.1:58479 -&gt; 50222
+Forwarding from [::1]:58479 -&gt; 50222
+Handling connection for 58479
+receiving incremental file list
+destination/
+destination/source/
+destination/source/database.sql
+sent 53 bytes  received 450,498 bytes  180,220.40 bytes/sec
+total size is 450,274  speedup is 1.00
+</code></pre>
+
+  <br>
+</div>
+<hr style="margin-left:100px;margin-right:100px" />
+<footer class="col-md-12 wm-page-content text-center footer">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+<script src="../../js/viewer.min.js"></script>
+</body>
+</html>

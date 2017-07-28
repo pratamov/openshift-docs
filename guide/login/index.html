@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>User Login - OpenShift Developer Documentation</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Login to OpenShift Command Line Interface", url: "#login-to-openshift-command-line-interface", children: [
+          ]},
+          {title: "Login to OpenShift Web Console", url: "#login-to-openshift-web-console", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+
+    <h2 id="login-to-openshift-command-line-interface">Login to OpenShift Command Line Interface</h2>
+<p><a href="https://github.com/openshift/origin/releases/tag/v1.5.1">click here to download OpenShift CLI</a></p>
+<p><strong>1. Run login command <code>oc login [OPENSHIFT_URL]</code></strong></p>
+<p><strong>2. Entry the username and password</strong></p>
+<pre><code>$ oc login https://lb.osh.telkom.co.id:8443
+Authentication required for https://lb.osh.telkom.co.id:8443 (openshift)
+Username: user001
+Password:
+Login successful.
+</code></pre>
+<h2 id="login-to-openshift-web-console">Login to OpenShift Web Console</h2>
+<p><strong>1. Open <a href="https://lb.osh.telkom.co.id:8443">OpenShift Web Console</a> by web browser</strong></p>
+<p><strong>2. Fill the username and password</strong></p>
+<p><img alt="Screenshot" src="../../img/0008.png" /></p>
+
+  <br>
+</div>
+<hr style="margin-left:100px;margin-right:100px" />
+<footer class="col-md-12 wm-page-content text-center footer">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+<script src="../../js/viewer.min.js"></script>
+</body>
+</html>
