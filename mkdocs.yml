@@ -1,0 +1,19 @@
+site_name: OpenShift Developer Documentation
+pages:
+    - Home: 'index.md'
+    - User Guide:
+        - 'User Login': 'guide/login.md'
+        - 'Application Development': 'guide/newapp.md'
+        - 'Operation': 'guide/appmgmt.md'
+        - 'Configuration': 'guide/config.md'
+        - 'References': 'guide/tutorial.md'
+    - Use Cases: 
+        - 'PHP Application': 'usecase/wordpress.md'
+        - 'Java Web Application': 'usecase/java.md'
+    - About: 'about.md'
+theme_dir: theme
+extra:
+  history_buttons: false
+  version: 1.0.0
+  article_nav_top: false
+  article_nav_bottom: false
