@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Configuration - OpenShift Developer Documentation</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Setting Source Secrets", url: "#setting-source-secrets", children: [
+          ]},
+          {title: "Configure Git WebHook", url: "#configure-git-webhook", children: [
+          ]},
+          {title: "Configure Autoscaling", url: "#configure-autoscaling", children: [
+          ]},
+          {title: "Setting Environment Variables", url: "#setting-environment-variables", children: [
+          ]},
+          {title: "Setting Application Router (HTTP)", url: "#setting-application-router-http", children: [
+          ]},
+          {title: "Setting Application Router (HTTPS)", url: "#setting-application-router-https", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+
+    <h2 id="setting-source-secrets">Setting Source Secrets</h2>
+<p><strong>1. Create SSH keys</strong></p>
+<p>see <a href="../tutorial/#create-ssh-keys-in-linux">Create SSH Keys in Linux</a></p>
+<p><strong>2. Click <code>Resources &gt; Secret</code> in OpenShift web console</strong>
+<img alt="Screenshot" src="../../img/0036.png" /></p>
+<p><strong>3. Click <code>Create Secret</code> button</strong>
+<img alt="Screenshot" src="../../img/0038.png" /></p>
+<p><strong>4. Fill the required form</strong></p>
+<ul>
+<li>Select <code>Source Secret</code> in Secret Type</li>
+<li>Specify Secret Name</li>
+<li>Select <code>SSH Key</code> in Authentication Type</li>
+<li>Upload SSH Private Key file</li>
+<li>Click <code>Create</code>
+<img alt="Screenshot" src="../../img/0037.png" /></li>
+</ul>
+<h2 id="configure-git-webhook">Configure Git WebHook</h2>
+<p>OpenShift allows the deployed application to automatically re-deploy when the source repository changed. To enable this feature, user have to configure Git WebHook. This guide using GitLab as Git repository. Assumed there is a running application in OpenShift to configure the WebHook.</p>
+<p><strong>1. Click <code>Builds &gt; Builds</code> in OpenShift web console </strong>
+<img alt="Screenshot" src="../../img/0040.png" /></p>
+<p><strong>2. Select the application to add WebHook </strong>
+<img alt="Screenshot" src="../../img/0041.png" /></p>
+<p><strong>3. In <code>Configuration</code> tab, copy the <code>Generic Webhook URL</code> </strong>
+<img alt="Screenshot" src="../../img/0042.png" /></p>
+<p><strong>4. Open Web Hooks configuration in the Git project. Create WebHook with the <code>Generic Webhook URL</code> </strong>
+<img alt="Screenshot" src="../../img/0043.png" /></p>
+<p><strong>5. Everytime user push the Git project, OpenShift will re-deploy the application accordingly</strong>
+<img alt="Screenshot" src="../../img/0044.png" /></p>
+<h2 id="configure-autoscaling">Configure Autoscaling</h2>
+<p><strong>1. Click <code>Applications &gt; Deployments</code> from the web console</strong>
+<img alt="Screenshot" src="../../img/0022.png" /></p>
+<p><strong>2. Select the application deployment to configure the autoscaling</strong>
+<img alt="Screenshot" src="../../img/0023.png" /></p>
+<p><strong>3. Go to <code>Configuration</code> tab then click <code>Add Autoscaler</code></strong>
+<img alt="Screenshot" src="../../img/0024.png" /></p>
+<p><strong>4. Specify the minimum pods, maximum pods and percentage of CPU request target. Then click <code>Save</code></strong>
+<img alt="Screenshot" src="../../img/0025.png" /></p>
+<p><strong>5. Click <code>Edit Resource Requests and Limit</code> </strong>
+<img alt="Screenshot" src="../../img/0026.png" /></p>
+<p><strong>6. Specify minimum and maximum CPU limit request </strong>
+<img alt="Screenshot" src="../../img/0027.png" /></p>
+<p><strong>7. The pod is going to autoscaling accourdingly </strong>
+<img alt="Screenshot" src="../../img/0028.png" /></p>
+<h2 id="setting-environment-variables">Setting Environment Variables</h2>
+<p><strong>1. Click <code>Builds &gt; Builds</code> in OpenShift web console </strong>
+<img alt="Screenshot" src="../../img/0040.png" /></p>
+<p><strong>2. Select the application to set the environmet variables </strong>
+<img alt="Screenshot" src="../../img/0041.png" /></p>
+<p><strong>3. Create the environment variables in the Environment tab </strong>
+<img alt="Screenshot" src="../../img/0045.png" /></p>
+<h2 id="setting-application-router-http">Setting Application Router (HTTP)</h2>
+<p><strong>1. Open OpenShift web console and select project</strong></p>
+<p><strong>2. Click <code>Applications &gt; Routes</code> </strong></p>
+<p><img alt="Screenshot" src="../../img/0013.png" /></p>
+<p><strong>3. Click <code>Create Route</code> button </strong></p>
+<p><img alt="Screenshot" src="../../img/0014.png" /></p>
+<p><strong>4. Fill the form</strong></p>
+<ul>
+<li>
+<p>Enter <code>Hostname</code> with the format <code>[APPLICATION_NAME].apps.osh.telkom.co.id</code></p>
+<pre><code>example : myapplication.apps.osh.telkom.co.id
+</code></pre>
+</li>
+<li>
+<p>Select the Service name</p>
+</li>
+<li>Click Create
+<img alt="Screenshot" src="../../img/0016.png" /></li>
+</ul>
+<h2 id="setting-application-router-https">Setting Application Router (HTTPS)</h2>
+<p>This section require SSL certificate. To generate self signed certificate in linux see <a href="../tutorial/#create-self-signed-ssl-in-linux">Create Self Signed SSL in Linux</a></p>
+<p><strong>1. Open OpenShift web console and select project</strong></p>
+<p><strong>2. Click <code>Applications &gt; Routes</code> </strong></p>
+<p><img alt="Screenshot" src="../../img/0013.png" /></p>
+<p><strong>3. Click <code>Create Route</code> button </strong></p>
+<p><img alt="Screenshot" src="../../img/0014.png" /></p>
+<p><strong>4. Fill the form</strong></p>
+<ul>
+<li>
+<p>Enter <code>Hostname</code> with the format <code>[APPLICATION_NAME].apps.osh.telkom.co.id</code></p>
+<pre><code>example : myapplication.apps.osh.telkom.co.id
+</code></pre>
+</li>
+<li>
+<p>Select the Service name</p>
+</li>
+<li>Select the Certificate files (Certificate and Private Key).</li>
+<li>Click Create
+<img alt="Screenshot" src="../../img/0029.png" /></li>
+</ul>
+
+  <br>
+</div>
+<hr style="margin-left:100px;margin-right:100px" />
+<footer class="col-md-12 wm-page-content text-center footer">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+<script src="../../js/viewer.min.js"></script>
+</body>
+</html>

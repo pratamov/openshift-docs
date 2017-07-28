@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>PHP Application - OpenShift Developer Documentation</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Introduction", url: "#introduction", children: [
+          ]},
+          {title: "Process", url: "#process", children: [
+          ]},
+          {title: "Prerequisite", url: "#prerequisite", children: [
+          ]},
+          {title: "Process Detail", url: "#process-detail", children: [
+          ]},
+          {title: "References", url: "#references", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+
+    <h1>PHP Application - WordPress</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p><p style="text-align:justify">
+    This use case consists of PHP application and MySQL database. It shows how to connect application and database in OpenShift. It also show how to build PHP application in OpenShift using private Git project.
+</p></p>
+<h2 id="process">Process</h2>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile userAgent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36\&quot; version=\&quot;6.9.7\&quot; editor=\&quot;www.draw.io\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;74e2e168-ea6b-b213-b513-2b3c1d86103e\&quot; name=\&quot;Page-1\&quot;&gt;3ZlLb6MwEMc/DcdWGEOAY5um7WF3FSlatT064IB3HYyM8+qnXxPM0yGNmle7OURmMsbj8c9/PMSAw/n6iaM0/slCTA3LDNcGfDAsy3Mt+Z0bNoXBNr3CEHESFiZQGybkHSujqawLEuKs5SgYo4KkbWPAkgQHomVDnLNV223GaHvUFEVYM0wCRHXrCwlFrKblmLX9GZMoLkcGpvpljkpnZchiFLJVwwRHBhxyxkTRmq+HmOa5K/NS9Hvs+bUKjONEHNLBwZ4P4GDmO4GPBq53o1YmE5tysjiUc1eXjIuYRSxBdFRb7zlbJCHO72jKq1jMqWwC2fyDhdio5UMLwaSpvsMPxlLlV4yZD9Q7DWXK2IIHyssNBw4AbhC4vm2bll/GLhCPsOjxgVWSJZyYzbHgG9mHY4oEWbbHRwqTqPKrMykbKpm7E9sX3BLRhRplIgMVeroplRjnaV3FROBJirbzXcmN1E4uytKC7RlZ58lXWVxiLvB6fx71+asOlusUXdTGhArTVU15CXncALy0HZMwnUT3lCjKBPDNa26/dcrLN+V2YUyhjqk2edCzTufnFGqcvjAejjnOMmmeFBOzzKHUdG19pJqleVNmBFGKKYs4mn9M8gnABV4bXGDp5FY0N9GF/jnQ9b+PimrBH4KneyE6+4Jr0DnkGImcyAck0BRlOpXtxJ6fxeqYUoroQGcReDtYtM8io943ZtE+gMVLPdH7gtvF4vh5LL/v0pSSQEbBkqtDCf02lJZ7TSjLHfItoXQPgNK/FpSuDiVLZiRa8LZGygf4tjb6Cmx2BdO2r8mmr2XwkSQki3Viq5N6ee4J2WJK8egrneCdHQehix3hAbzGNsdrIl4b7bcDSoATSQMo30bs0wb7SG1QXceMyNCqhXc6m8gadFa0iEn1qhf1jnO0abiluUPWPw60O+PAzhuGjr/t7vWXjSKCmrAqJ5+ETn8u/2Iah3KHiTZessIh72i6dciRUImQ3s694Tzk+5WSKJGGQDKBuTTkO1U+4Omd+mFOwnDLMEVTTO9R8Dfa0jxklPHtuHC2/ezb6+qllYrEqF4VNVns2Wm9qnBj3tqOp06CR4IGvXYPNptlWBhdnThyFa2rSofZkI6GWnwB8QDOWdQDdNXD7tziROoBYPvxdHY1sHQ1eMPZ/y4H1sdy4NqwtRJlOfNZkM4rB+XeaCzj74wkUV5rcbIsqq4nIvPxqK0tj9l8usiucpQF/oFHWe8stf9Jy6xaAlsCuNXDC5dgwLnUOatf4E6Kt6Ph3SzbcrAtczJ5zgNJQqPxHnaCA471fxEuXcINDni7sKvs+EQFJy/r/8eK5Nd/MsLRPw==&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+<p><p style="text-align:justify">
+    Prepare WordPress source code. Update the database configuration in <code>wp-config.php</code> file using environment variable. User can define variables for <code>DB_NAME</code>, <code>DB_USER</code> and <code>DB_PASSWORD</code> environment variables with arbitrary string. Set <code>DB_HOST</code> variable depend on the database service name using format <code>[DATABASE_SERVICE_NAME]_SERVICE_HOST</code>. For instance if user create database with service name <code>MYSQL</code>, DB_HOST have to set environment variable as <code>MYSQL_SERVICE_HOST</code>.
+</p>
+<em>example</em></p>
+<pre><code>define('DB_NAME', getenv('DB_NAME'));
+
+/** MySQL database username */
+define('DB_USER', getenv('DB_USER'));
+
+/** MySQL database password */
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
+
+/** MySQL hostname */
+define('DB_HOST', getenv('MYSQL_SERVICE_HOST'));
+</code></pre>
+<p style="text-align:justify">
+    The WordPress source code have to publish in Git repository which reachable from OpenShift and vice versa.
+</p>
+
+<h2 id="process-detail">Process Detail</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Process</th>
+            <th>Description</th>
+        <tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Configure Git SSH and Source Secret</td>
+            <td>
+                This process require <a href="../../guide/tutorial/#create-ssh-keys-in-linux">generate SSH keys</a>. Then
+                <a href="../../guide/tutorial/#add-public-key-in-gitlab-repository">set the SSH in Git Repository</a> using the public key. Finally <a href="../../guide/config/#setting-source-secrets">create Source Secrets</a> using private key.
+            </td>
+        </tr>
+        <tr>
+            <td>Create PHP Application</td>
+            <td>
+                If the WordPress Source Code using private Git Repository, <a href="../../guide/newapp/#create-new-application-with-private-git-repository">specify Source Secret</a>. Otherwise just <a href="../../guide/newapp/#create-new-application-from-catalog">create the application.</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Create Database</td>
+            <td>
+                Take a look to <a href="../../guide/newapp/#create-new-database">this guide</a> to create database in OpenShift. 
+            </td>
+        </tr>
+        <tr>
+            <td>Configure Database Connection</td>
+            <td>
+                <a href="../../guide/config/#setting-environment-variables">Set the required environment variables</a> in the PHP application. This case needs DB_NAME, DB_USER and DB_PASSWORD environment to set using name, username and password respectively of the database.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="references">References</h2>
+<ul>
+<li><a href="../../../guide/tutorial/#create-ssh-keys-in-linux">Create SSH Keys in Linux</a></li>
+<li><a href="../../../guide/tutorial/#add-public-key-in-gitlab-repository">Add Public Key in GitLab Repository</a></li>
+<li><a href="../../../guide/config/#setting-source-secrets">Setting Source Secrets</a></li>
+<li><a href="../../../guide/newapp/#create-new-application-with-private-git-repository">Create New Application With Private Git Repository</a></li>
+<li><a href="../../../guide/newapp/#create-new-application-from-catalog">Create New Application From Catalog</a></li>
+<li><a href="../../../guide/newapp/#create-new-database">Create New Database</a></li>
+<li><a href="../../../guide/config/#setting-environment-variables">Setting Environment Variables</a></li>
+</ul>
+
+  <br>
+</div>
+<hr style="margin-left:100px;margin-right:100px" />
+<footer class="col-md-12 wm-page-content text-center footer">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+<script src="../../js/viewer.min.js"></script>
+</body>
+</html>

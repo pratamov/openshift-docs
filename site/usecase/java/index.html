@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Java Web Application - OpenShift Developer Documentation</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Introduction", url: "#introduction", children: [
+          ]},
+          {title: "Process", url: "#process", children: [
+          ]},
+          {title: "Prerequisite", url: "#prerequisite", children: [
+          ]},
+          {title: "Process Detail", url: "#process-detail", children: [
+          ]},
+          {title: "References", url: "#references", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+
+    <h1>Java Web Application</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p><p style="text-align:justify">
+    This use case shows how to deploy Java web application in OpenShift. This section covers how to setting WebHook, autoscaler and also setting SSL router. 
+</p>
+<p style="text-align:justify">
+    Most of the cases, OpenShift uses Git as repository to obtain the source in application. OpenShift capable to automatically update the deployed applications immediately after the Git repository updated. User have to set the WebHook to enable the feature.
+</p>
+<p style="text-align:justify">
+    OpenShift provides autoscaling feature to let the applications obtain resource depend on it's load. OpenShift adjust the memory and CPU based on the application's load. 
+</p>
+<p style="text-align:justify">
+    When user deploy web application in OpenShift it is going to obtain a URL to expose the interface. The URL is HTTP by default. User can create SSL router when they wish.
+</p></p>
+<h2 id="process">Process</h2>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile userAgent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36\&quot; version=\&quot;6.9.7\&quot; editor=\&quot;www.draw.io\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;178d4bf7-2678-c851-30b0-abed46fd7ce3\&quot; name=\&quot;Page-1\&quot;&gt;5VrRkqI4FP0aH3uKJID42O1079RW79bUWFuz8xglIjuRUCG0Ol+/CQQxBmxbRdqefuiCaxKSe8/JPRcyQOPl+g+O08VfLCR0AJ1wPUCfBxAGQyj/K8OmNLhOUBoiHoelCdSGSfyLaKOjrXkcksxoKBijIk5N44wlCZkJw4Y5Zyuz2ZxR86kpjohlmMwwta3f41As9LI8p7Z/IXG0qJ4MHP3LEleNtSFb4JCtdkzocYDGnDFRXi3XY0KV7yq/lP2eWn7dToyTRBzTAQbBbBgMZz6YTR3XI3d6hExsqsWSUK5d3zIuFixiCaaPtfWBszwJiRrRkXcLsaTyEsjL/4gQGx0+nAsmTfUIz4ylul35TPWg1mVU82I5n+lW/tQd+XiOfOSOMCSomrvAPCKipQ3cOlmCk7AlEXwj+3BCsYhfzOdjDZNo2672pLzQzmx2bNvkXjDN9VMmcqLCdjelEsbKratFLMgkxcV6V5JIpnNxlpbYnsdr5XztxRfCBVkf9qO9ft0BeW7ZRRMTaZiuapRXIF/sALyyneMwC4nohpEIbSRa6+sNidBC4p/4BUvLpFwSdMZyw7a8L7eqVF1KX2BKCWURx8vXYXoBVMJhYKASQBuW0IE2Lt0ucOndDi6bMfcKLt0r4bJtcju4HHOChQLk95iGc6qmcZ+mNJ7JmbDEioPp5WvgcmTgEjo2LsFodCVcBn3gkqxj8a/urq5/qOtP3uUQ6x6BWP9MxBZd7znHm50GKYsTke2M/FUZ6uCDkbkpIVNpyYtyxDqY26mdFt+RRY8fJLNiLtEszFByksW/8LRooMKkFyZbew8D77NSEjSOEmmYycgQLg2KFZJk9F7/sIzDsMALxVNCH/DsZ1QgZ8wo48Vz0bz4O8QrLcb1TAZbCbyLiGZQtxLwzvnkBkO9Ib8t3HU8qyZsPs+IsCh4ZtSAf8Pp4hjyAa+vfAGGFiP+Zh+dEKBls6sZ4bju3s70nvnhWjH8SnFSFOVc/c9FzpUCyNNQSQH0ZGf9BVtO86wXJQqDJiUK7IwfdJHxwUVTvnQB32xzubqpk/mb5UDRqxIEF9yR/GvsSCfqAd+Ahut2rAd8izkTGaU4iZReJtMvjP20uXJlhQyA6RTkNyhkv+GNQicKefvSrReJDAYdSWTgHUOKUR+k8HxwXVJAO5/8Bip559VxiyjwjDBUpfb7lARw1E1aK3PSNrFdX04fRVQ4PJOop79wdSzufHw9DVv2RT20lNNwT0674DzyVKRE5rB37t4QHdWjnhXkx6RwGXT++fZcpGaZmaEzmTz3r7aHpucb3q9Bx7XVQydqG8Je1MOB7etS29LoGttSm0BARoh9sBe6clK6Vx29twsR8zmev/dddK89CsCh9pcXLsB+vVfLecVF6Hxjudo9+9b07p5r3IYaGPgNrOxE0yP3vYmFzmtgeEwRjOAl+Pr2Ihga2Bi+kWbDrmkG7ap5zJJ5HJVvme5lXDOpSwra9V07O2b28xt5dq2vS+iGDoa0JK/XMty5n5FO960Nyt+gaEWH4S+LVt9F5nGUd122ohs6sHIaQ87OKaczxK5aPn5pWgLqUGkKkJk+K7qcW5rCvdK0gnbH733s73m7uRnv5Oa+C9MqFVfVQXXIo5fPQAhafnuKkzhb2PvR9mxhdZgrZLnE5GO/Zw7NbwRBQ5V/oUOH8rY+WltCtj6fjB7/Bw==&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+
+<h2 id="prerequisite">Prerequisite</h2>
+<p><p style="text-align:justify">
+    Java web application source code in OpenShift have to <a href="https://maven.apache.org/what-is-maven.html">Mavenized</a>. The project have to specify <b>openshift</b> profile in the <b>pom.xml</b> as follows
+</p></p>
+<pre><code>    ...
+    &lt;profiles&gt;
+    ....
+        &lt;profile&gt;
+            &lt;id&gt;openshift&lt;/id&gt;
+            &lt;build&gt;
+                &lt;plugins&gt;
+                    &lt;plugin&gt;
+                        &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+                        &lt;configuration&gt;
+                            &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;
+                            &lt;outputDirectory&gt;deployments&lt;/outputDirectory&gt;
+                            &lt;warName&gt;ROOT&lt;/warName&gt;
+                        &lt;/configuration&gt;
+                    &lt;/plugin&gt;
+                &lt;/plugins&gt;
+            &lt;/build&gt;
+        &lt;/profile&gt;
+    &lt;/profiles&gt;
+&lt;/project&gt;
+</code></pre>
+<h2 id="process-detail">Process Detail</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Process</th>
+            <th>Description</th>
+        <tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Create WildFly Application</td>
+            <td>
+                WildFly is an application server to implements Java application. WildFly available as default image in OpenShift catalog. See <a href="../../guide/newapp/#create-new-application-from-catalog">this guide to create application.</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Setting WebHook</td>
+            <td>
+                Take a look <a href="../../guide/config/#configure-git-webhook">this guide</a> to set the WebHook.
+            </td>
+        </tr>
+        <tr>
+            <td>Setting SSL Router</td>
+            <td>
+                SSL Router require SSL certificate. User can <a href="../../guide/tutorial/#create-self-signed-ssl-in-linux">generate self-signed SSL</a>. <a href="../../guide/config/#setting-application-router-https">This guide</a> shows how to set SSL application router given SSL certificate.
+            </td>
+        </tr>
+        <tr>
+            <td>Configure Autoscaling</td>
+            <td>
+                See <a href="../../guide/config/#configure-autoscaling">this guide</a> to configure autoscaling in the application.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="references">References</h2>
+<ul>
+<li><a href="../../../guide/newapp/#create-new-application-from-catalog">Create New Application From Catalog</a></li>
+<li><a href="../../../guide/config/#configure-git-webhook">Configure Git Webhook</a></li>
+<li><a href="../../../guide/tutorial/#create-self-signed-ssl-in-linux">Create Self Signed SSL in Linux</a></li>
+<li><a href="../../../guide/config/#setting-application-router-https">Setting Application Router HTTPS</a></li>
+<li><a href="../../../guide/config/#configure-autoscaling">Configure Autoscaling</a></li>
+</ul>
+
+  <br>
+</div>
+<hr style="margin-left:100px;margin-right:100px" />
+<footer class="col-md-12 wm-page-content text-center footer">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+<script src="../../js/viewer.min.js"></script>
+</body>
+</html>

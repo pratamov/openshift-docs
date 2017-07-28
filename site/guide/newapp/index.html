@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Application Development - OpenShift Developer Documentation</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Create New Project Using Web Console", url: "#create-new-project-using-web-console", children: [
+          ]},
+          {title: "Create New Project Using Command Line Interface", url: "#create-new-project-using-command-line-interface", children: [
+          ]},
+          {title: "Create New Application From Catalog", url: "#create-new-application-from-catalog", children: [
+          ]},
+          {title: "Create New Application From Docker Image", url: "#create-new-application-from-docker-image", children: [
+          ]},
+          {title: "Create New Database", url: "#create-new-database", children: [
+          ]},
+          {title: "Create New Application With Private Git Repository", url: "#create-new-application-with-private-git-repository", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+
+    <h2 id="create-new-project-using-web-console">Create New Project Using Web Console</h2>
+<p><strong>1. Open <a href="https://lb.osh.telkom.co.id:8443">OpenShift Web Console</a></strong></p>
+<p><strong>2. Click <code>New Project</code> </strong></p>
+<p><img alt="Screenshot" src="../../img/0009.png" /></p>
+<p><strong>3. Fill the form </strong>
+<img alt="Screenshot" src="../../img/0010.png" /></p>
+<h2 id="create-new-project-using-command-line-interface">Create New Project Using Command Line Interface</h2>
+<p><strong>1. Execute new-project command <code>oc new-project [PROJECT_NAME]</code></strong></p>
+<pre><code>$ oc new-project project0002
+Now using project "project0002" on server "https://lb.osh.telkom.co.id:8443".
+
+You can add applications to this project with the 'new-app' command. For example, try:
+
+    oc new-app centos/ruby-22-centos7~https://github.com/openshift/ruby-ex.git
+
+to build a new example application in Ruby.
+</code></pre>
+<h2 id="create-new-application-from-catalog">Create New Application From Catalog</h2>
+<p><strong>1. Create New Application click <code>Add to Project</code> </strong>
+<img alt="Screenshot" src="../../img/0001.png" /></p>
+<p><strong>2. Choose Application from the Catalog (tab <code>Browse Catalog</code>).</strong>
+<img alt="Screenshot" src="../../img/0002.png" /></p>
+<p><strong>3. Fill the required form then click <code>Create</code> </strong>
+<img alt="Screenshot" src="../../img/0003.png" /></p>
+<h2 id="create-new-application-from-docker-image">Create New Application From Docker Image</h2>
+<p><strong>1. Prepare the application from <a href="https://hub.docker.com/">DockerHub Repositories</a></strong>
+<img alt="Screenshot" src="../../img/0004.png" /></p>
+<p><strong>2. Create New Application (<code>Add to Project &gt; Deploy Image</code>)</strong>
+<img alt="Screenshot" src="../../img/0005.png" /></p>
+<p><strong>3. Specify the <code>Image Name</code> from chosen application from DockerHub Repositories</strong>
+<img alt="Screenshot" src="../../img/0006.png" /></p>
+<p><strong>4. Fill the required form then click <code>Create</code>.</strong></p>
+<h2 id="create-new-database">Create New Database</h2>
+<p>This section using MySQL database</p>
+<p><strong>1. Create New Application click <code>Add to Project</code> </strong>
+<img alt="Screenshot" src="../../img/0001.png" /></p>
+<p><strong>2. Choose MySQL Persistent from the Catalog</strong>
+<img alt="Screenshot" src="../../img/0030.png" /></p>
+<p><strong>3. Fill the required form. Set unique <code>Database Service Name</code> do distinguish applications inside project. Leave <code>MySQL Connection Username</code>, <code>MySQL Connection Password</code> and <code>MySQL root user Password</code> empty to auto generate the values. Click <code>Create</code></strong>
+<img alt="Screenshot" src="../../img/0031.png" /></p>
+<p><strong>4. Save the generated <code>Username</code>, <code>Password</code>, <code>Database Name</code> and <code>Connection URL</code>. </strong>
+<img alt="Screenshot" src="../../img/0032.png" /></p>
+<h2 id="create-new-application-with-private-git-repository">Create New Application With Private Git Repository</h2>
+<p>This guide shows how to create new application which source in Git private repository. </p>
+<p><strong>1. Setting Source Secrets</strong></p>
+<p>see <a href="../config/#setting-source-secrets">Setting Source Secrets</a></p>
+<p><strong>2. Add Public Key in Git Repository</strong></p>
+<p>to show how to add public key in GitLab see <a href="../tutorial/#add-public-key-in-gitlab-repository">Add Public Key in GitLab Repository</a></p>
+<p><strong>3. Create New Application click <code>Add to Project</code> </strong>
+<img alt="Screenshot" src="../../img/0001.png" /></p>
+<p><strong>4. Choose Application from the Catalog (tab <code>Browse Catalog</code>).</strong>
+<img alt="Screenshot" src="../../img/0002.png" /></p>
+<p><strong>5. Fill the required form </strong></p>
+<ul>
+<li>
+<p>Specify the application name</p>
+<pre><code>example: php-1
+</code></pre>
+</li>
+<li>
+<p>Fill <code>Git Repository URL</code> with the Git private project using SSH URL</p>
+<pre><code>example: git@10.60.160.38:andre/phpinfo.git
+</code></pre>
+</li>
+<li>
+<p>Click <code>advanced options</code></p>
+</li>
+<li>Select <code>Source Secret</code> with source secret created in Step 1</li>
+<li>Click <code>Create</code> button
+<img alt="Screenshot" src="../../img/0039.png" /></li>
+</ul>
+
+  <br>
+</div>
+<hr style="margin-left:100px;margin-right:100px" />
+<footer class="col-md-12 wm-page-content text-center footer">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+<script src="../../js/viewer.min.js"></script>
+</body>
+</html>
